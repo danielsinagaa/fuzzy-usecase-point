@@ -29,13 +29,13 @@
 
     <div class="table-responsive{-sm}">
         <table class="table table-bordered table-hover table-sm" style="width: 55vw; margin-top: 5vh">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <td>Nama</td>
                 <td>Kategori</td>
                 <td>Action</td>
             </tr>
-            </thead class="table-dark">
+            </thead>
             <tbody>
             <tr th:each="aktor : ${aktors}">
                 <input type="hidden" th:field="*{id}" />

@@ -27,13 +27,13 @@
     <div class="table-responsive{-sm}">
         <h2>Use Case</h2>
         <table class="table table-bordered table-hover table-sm" style="width: 45vw; border: solid 1px black; margin-top: 5vh">
-            <thead>
+            <thead class="table-dark">
             <tr>
                 <td>Nama</td>
                 <td>Jumlah Transaksi</td>
                 <td>Action</td>
             </tr>
-            </thead class="table-dark">
+            </thead>
             <tbody>
             <tr th:each="usecase : ${usecases}">
                 <input type="hidden" th:field="*{id}" />
