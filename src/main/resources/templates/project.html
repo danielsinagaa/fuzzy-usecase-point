@@ -31,7 +31,7 @@
     </li>
 </ul>
 
-<div style="margin-top: 5vh;margin-left: 10vh;padding: 2vh 3vh; width: 60%; height: auto; background-color: #A7D0CD; border-radius: 10px">
+<div style="margin-top: 5vh;margin-left: 10vh;padding: 2vh 3vh; width: 65%; height: auto; background-color: #A7D0CD; border-radius: 10px">
 
     <h3>Fuzzy Usecase Project</h3>
 
@@ -39,7 +39,7 @@
 
         <a th:href="@{/newProyek}" class="btn" style="background-color: #233E8B; color: white">Tambah Proyek</a>
 
-        <table class="table table-bordered table-hover table-sm" style="width: 55vw; border: solid 1px black; margin-top: 5vh">
+        <table class="table table-bordered table-hover table-sm" style="width: 60vw; border: solid 1px black; margin-top: 5vh">
         <thead class="table-dark">
             <tr>
                 <th class="align-middle">No</th>
@@ -47,7 +47,7 @@
                 <th class="align-middle">Jumlah Aktor</th>
                 <th class="align-middle">Jumlah Use Case</th>
                 <th class="align-middle">Jumlah Effort</th>
-                <th  colspan="2" class="text-center">Action</th>
+                <th  colspan="3" class="text-center">Action</th>
             </tr>
             </thead>
             <tbody>
@@ -57,6 +57,11 @@
                 <td th:text="${proyek.jumlahAktor}"></td>
                 <td th:text="${proyek.jumlahUseCase}"></td>
                 <td th:text="${proyek.effort}"></td>
+                <td class="text-center">
+                    <a th:href="@{/detail/{id}(id=${proyek.id})}" class="btn " style="background-color: #E4EFE7">
+                        <img src="../static/images/detail.png" th:src="@{/images/detail.png}" width="24" class="rounded mx-auto" >
+                    </a>
+                </td>
                 <td class="text-center">
                     <a th:href="@{/editProyek/{id}(id=${proyek.id})}" class="btn " style="background-color: #E4EFE7">
                         <img src="../static/images/edit.png" th:src="@{/images/edit.png}" width="24" class="rounded mx-auto" >

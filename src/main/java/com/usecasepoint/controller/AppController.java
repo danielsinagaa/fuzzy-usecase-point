@@ -56,6 +56,57 @@ public class AppController {
         return "result";
     }
 
+    @GetMapping("/detail/{id}")
+    public String detail(Model model, @PathVariable (value = "id") String id){
+//        if (!userLogin.getLogin()){
+//            Login loginRequest = new Login();
+//            model.addAttribute("loginRequest", loginRequest);
+//            userLogin.setLogin(false);
+//            return "login_page";
+//        }
+
+        Proyek proyek = proyekService.findById(id);
+        Metrics metric = proyek.getMetrics();
+
+        List<TCF> tcfs = tcfService.findAllByProyekId(id);
+        List<TCFEnum> tcfEnum = new ArrayList<>(EnumSet.allOf(TCFEnum.class));
+        List<TCFModel> tcfModels = new ArrayList<>();
+
+        for (TCFEnum e : tcfEnum) {
+            for (TCF tcf : tcfs){
+                if (tcf.getCode().equals(e.name())){
+                    tcfModels.add(new TCFModel(e, tcf));
+                }
+            }
+        }
+
+        model.addAttribute("tcfs", tcfModels);
+
+        List<EF> efs = efService.findAllByProyekId(id);
+        List<EFEnum> efEnum = new ArrayList<>(EnumSet.allOf(EFEnum.class));
+        List<TCFModel> efModels = new ArrayList<>();
+
+        for (EFEnum e : efEnum) {
+            for (EF ef : efs){
+                if (ef.getCode().equals(e.name())){
+                    efModels.add(new TCFModel(e, ef));
+                }
+            }
+        }
+
+        List<Aktor> aktors = aktorService.findAllByProyekId(id);
+        model.addAttribute("aktors", aktors);
+
+        List<UseCase> useCases = useCaseService.findAllByProyekId(id);
+        model.addAttribute("usecases", useCases);
+
+        model.addAttribute("efs", efModels);
+
+
+        model.addAttribute("metric", metric);
+        return "detail_project";
+    }
+
     @GetMapping("/project")
     public String project(Model model){
         if (!userLogin.getLogin()){
