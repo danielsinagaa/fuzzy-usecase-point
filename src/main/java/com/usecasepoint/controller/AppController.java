@@ -4,6 +4,7 @@ import com.usecasepoint.entity.*;
 import com.usecasepoint.entity.enumcons.EFEnum;
 import com.usecasepoint.entity.enumcons.Login;
 import com.usecasepoint.entity.enumcons.TCFEnum;
+import com.usecasepoint.model.MetricsShow;
 import com.usecasepoint.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,13 +41,18 @@ public class AppController {
     @GetMapping("/result")
     public String result(Model model){
         if (!userLogin.getLogin()){
-            userLogin.setMessageLog("LOG IN TO ACCESS!!");
             Login loginRequest = new Login();
             model.addAttribute("loginRequest", loginRequest);
             userLogin.setLogin(false);
             return "login_page";
         }
-        model.addAttribute("metricsList", metricService.findAll());
+
+        List<MetricsShow> metricsShows = new ArrayList<>();
+
+        metricService.findAll().forEach(it ->
+                metricsShows.add(new MetricsShow(it)));
+
+        model.addAttribute("metricsList", metricsShows);
         return "result";
     }
 

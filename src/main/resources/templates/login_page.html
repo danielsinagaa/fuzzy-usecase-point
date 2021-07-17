@@ -7,32 +7,39 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 </head>
-<body>
+<body style="background-color: #E4EFE7;color: #233E8B;">
     <div>
         <div style="text-align: center; margin: 5vh auto">
-            <h2>Selamat Datang di Aplikasi Perhitungan Software Effort Estimation</h2>
+            <img src="../static/images/icon.png" th:src="@{/images/icon.png}" width="180" class="rounded mx-auto d-block" >
+
+            <h3>Selamat Datang di Aplikasi</h3>
+            <h3>Perhitungan Software Effort Estimation</h3>
         </div>
-        <div style="margin: auto; text-align: center; width: auto">
-            <h4 >Login</h4>
-        </div>
-        <br>
-        <div class="d-flex justify-content-center" style="margin-top: -3vh">
-            <form action="#" th:action="@{/login}" th:object="${loginRequest}" method="POST">
-                <div class="form-group">
-                    <p th:text="${loginRequest.messageLog}" style="color: red;"></p>
-                    <label for="exampleInputEmail1" >Username</label>
+
+        <div style="background-color: #233E8B; color: white; padding: 2vh 2vh; width: 20%; margin: auto; border-radius: 8px">
+            <div style="margin: auto; text-align: center; width: auto">
+                <h4 >Login</h4>
+            </div>
+
+            <div class="d-flex justify-content-center" style="margin-top: -3vh; text-align: center">
+                <form action="#" th:action="@{/login}" th:object="${loginRequest}" method="POST">
+                    <div class="form-group" style="text-align: left">
+                        <p th:text="${loginRequest.messageLog}" style="color: red;"></p>
+                        <label for="exampleInputEmail1" >Username :</label>
+                        <br>
+                        <input type="text" class="input-sm" id="exampleInputEmail1" placeholder="Enter Username" th:field="*{username}">
+                    </div>
+                    <div class="form-group" style="text-align: left">
+                        <label for="exampleInputPassword1" >Password :</label>
+                        <br>
+                        <input type="password" class="input-sm" id="exampleInputPassword1" placeholder="Password" th:field="*{password}">
+                    </div>
                     <br>
-                    <input type="text" class="input-sm" id="exampleInputEmail1" placeholder="Enter Username" th:field="*{username}">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1" >Password</label>
-                    <br>
-                    <input type="password" class="input-sm" id="exampleInputPassword1" placeholder="Password" th:field="*{password}">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                    <button type="submit" class="btn " style="background-color: white; color: #233E8B">Submit</button>
+                </form>
+            </div>
         </div>
+
     </div>
 </body>
 </html>

@@ -12,22 +12,30 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
 </head>
-<body>
-<ul class="nav nav-tabs">
+<body style="background-color: #E4EFE7;color: #233E8B;">
+<div style="position: absolute; left: 92%; height: auto;border-radius: 20px; background-color: #DEEEEA">
+    <a class="nav-link" style="color: brown; font-size: 18px" th:href="@{/}">
+        Logout
+        <img src="../static/images/logout.png" th:src="@{/images/logout.png}" width="20" class="rounded mx-auto" >
+    </a>
+</div>
+<ul class="nav nav-tabs" style="background-color: #94D0CC">
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" th:href="@{/home}">Beranda</a>
+        <a class="nav-link" aria-current="page" th:href="@{/home}">
+            <img src="../static/images/icon.png" th:src="@{/images/icon.png}" width="24" class="rounded mx-auto d-block" >
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" th:href="@{/project}">Project</a>
+        <a class="nav-link" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/home}">Beranda</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" th:href="@{/result}">Result</a>
+        <a class="nav-link" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/project}">Project</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" th:href="@{/fuzzyUsecase}">Fuzzy Usecase</a>
+        <a class="nav-link" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/result}">Result</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" th:href="@{/}">Logout</a>
+        <a class="nav-link active" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/fuzzyUsecase}">Fuzzy Usecase</a>
     </li>
 </ul>
 
