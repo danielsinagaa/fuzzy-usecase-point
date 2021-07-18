@@ -24,61 +24,12 @@
         <a class="nav-link" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/home}">Beranda</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/project}">Project</a>
+        <a class="nav-link" style="color: #233E8B; background-color: #E4EFE7;text-decoration: none" aria-current="page" th:href="@{/project}">Project</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" style="color: #233E8B;  background-color: #E4EFE7;text-decoration: none" aria-current="page" th:href="@{/result}">Result</a>
+        <a class="nav-link" style="color: #233E8B; text-decoration: none" aria-current="page" th:href="@{/result}">Result</a>
     </li>
 </ul>
-
-<div>
-    <div style="margin-top: 5vh;margin-left: 10vh;padding: 2vh 3vh; width: 60%; height: auto; background-color: #A7D0CD; border-radius: 10px">
-
-        <h3>Fuzzy Usecase Result</h3>
-
-        <div class="table-responsive{-sm}">
-
-            <table class="table table-bordered table-hover table-sm" style="width: 55vw; border: solid 1px black; margin-top: 5vh">
-                <thead class="table-dark">
-                <tr>
-                    <th rowspan="2" class="align-middle">No</th>
-                    <th rowspan="2" class="align-middle">Nama Proyek</th>
-                    <th colspan="3" class="text-center">Effort</th>
-                    <th colspan="2" class="text-center">MER</th>
-                    <th colspan="2" class="text-center">MRE</th>
-                    <th colspan="2" class="text-center">ERROR</th>
-                </tr>
-                <tr>
-                    <td>ACTUAL</td>
-                    <td>UCP</td>
-                    <td>FUCP</td>
-                    <td>UCP</td>
-                    <td>FUCP</td>
-                    <td>UCP</td>
-                    <td>FUCP</td>
-                    <td>UCP</td>
-                    <td>FUCP</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td th:text="${metric.nama}"></td>
-                    <td th:text="${metric.actual}"></td>
-                    <td th:text="${metric.effortUCP}"></td>
-                    <td th:text="${metric.effortFUCP}"></td>
-                    <td th:text="${metric.merUCP}"></td>
-                    <td th:text="${metric.merFUCP}"></td>
-                    <td th:text="${metric.mreUCP}"></td>
-                    <td th:text="${metric.mreFUCP}"></td>
-                    <td th:text="${metric.errorUCP}"></td>
-                    <td th:text="${metric.errorFUCP}"></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
 
 <div style="margin-top: 5vh;margin-left: 10vh;padding: 2vh 3vh; width: 60%; height: auto; background-color: #A7D0CD; border-radius: 10px">
     <div class="table-responsive{-sm}">
@@ -133,7 +84,7 @@
 </div>
 
 
-<div style="margin-top: 5vh;margin-left: 10vh;padding: 2vh 3vh; width: 80%; height: auto; background-color: #A7D0CD; border-radius: 10px">
+<div style="margin-top: 5vh;margin-left: 10vh;padding: 2vh 3vh; width: 75%; height: auto; background-color: #A7D0CD; border-radius: 10px">
     <div class="table-responsive{-sm}">
 
         <h2>Environmental</h2>
